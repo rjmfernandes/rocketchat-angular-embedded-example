@@ -31,7 +31,7 @@ The `--open` will give the instruction to open a browser window pointing to your
 
 The application as it is will expect a Rocket.Chat instance running on http://localhost:3000.
 
-## Troubleshooting
+### Troubleshooting
 
 You may find some issues connecting to Rocket.Chat from the angular app possibly related to your environment. In particular we have found important that your /etc/hosts file dont have directly mapped `::1`to localhost. So you may need to remove comment any such mapping and just keep the IP6 related mappings:
 
