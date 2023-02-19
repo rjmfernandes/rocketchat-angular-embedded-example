@@ -60,6 +60,8 @@ First a list of channels (public) and groups (private) that he belongs (more exa
 
 Right now as soon as user clicks to another page as Home, the user would need to relogin simulating the logout mechanism.
 
+Its advised that for demonstrations that you open the application on incognito mode or on a different browser than the one you may open in parallel Rocket.Chat directly, so to avoid any confusions between the user logged in the application (with Rocket.Chat embedded) and the user that you may be using to access directly Rocket.Chat.
+
 ## How can you tune the example application
 
 The configurability of the application will be improved but in any case its already quite easy to change it for demonstration purposes.
