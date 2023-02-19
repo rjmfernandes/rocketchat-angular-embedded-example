@@ -29,6 +29,8 @@ ng serve --open
 
 The `--open` will give the instruction to open a browser window pointing to your app under http://localhost:4200
 
+The application as it is will expect a Rocket.Chat instance running on http://localhost:3000.
+
 ## Troubleshooting
 
 You may find some issues connecting to Rocket.Chat from the angular app possibly related to your environment. In particular we have found important that your /etc/hosts file dont have directly mapped `::1`to localhost. So you may need to remove comment any such mapping and just keep the IP6 related mappings:
@@ -74,7 +76,11 @@ Almost all the relevant stylesheet should be possible to tweak under src/styles.
 
 The title of the application web page can be changed at src/index.html
 
+The two main services communicating with Rocket.Chat REST API currently are:
+- UserService at src/app/user.service.ts
+- RocketchatService at src/app/rocketchat.service.ts
 
+If you want to change the URL for your rocketchat of the default localhost:3000 to another one you would need to change those two services.
 
 
 
