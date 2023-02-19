@@ -94,4 +94,5 @@ If you want to change the URL for your rocketchat of the default localhost:3000 
 - Review application to make it at least as an option to implement explicitly the login leveraging the create token mechanism in general used under such scenarios.
 - Review the channels list presentation to handle large channel names in a better looking way. (Currently I would advise to use short names fir the channels/rooms.)
 - Cleanup stylesheet. (Currently has too many not used styles.)
+- Add details as counter of incoming messages and notifications of new messages.
 
