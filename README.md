@@ -39,3 +39,24 @@ You may find some issues connecting to Rocket.Chat from the angular app possibly
 ```
 
 Check how above we have commented out the mapping with localhost.
+
+## How the application works
+
+The idea of a scenario of chat engine where you may want to embed channel/group chat Rocket.Chat component in embedded mode into your application.
+In most of those cases what usually happens is that you will have your own login mechanism for end users on your application but want to be able to present the user with the chat component as an extra feature, handling yourself behind the scenes the login into Rocket.Chat for the user in a transparent way.
+Typically this is done by leveraging the Create User Token optional capability of Rocket.Chat. Check https://developer.rocket.chat/reference/api/rest-api/endpoints/core-endpoints/users-endpoints/create-users-token
+
+So you would have a backend service as part of your app (only accessible to authenticated users on your platform) that would leverage a system administrator account in Rocket.Chat to ask for a token session for the user in Rocket.Chat once he is authenticated in your platform. After that all requests to Rocket.Chat are made leveraging the userId and authToken provided by the Create Token API for the user.
+
+This application in its current state still does not do exactly that but is structured in a way to facilitate this option if needed an din the future. and for demonstration purposes is in fact compatible to such scenario (where the login happens against your platform and not Rocket.Chat).
+
+The application in its current state and without any changes to its code will present the option to login for the user. This login in fact is executed the corresponding REST API of Rocket.Chat. (But this code is isolated enough that could be easily replaced by what it was described before.)
+
+After that the behaviour is the expected one with the authToken and userId obtained from Rocket.Chat all API calls and embeddings will happen.
+
+First a list of channels (public) and groups (private) that he belongs (more exactly has subscribed) are presented to him. He can select any one and an iframe is populated with corresponding embedded URL for the channel or group. The iframe is also authenticated with Rocket.Chat by sending the corresponding event (check https://developer.rocket.chat/rocket.chat/iframe-integration/iframe-integration-sending-commands), in particular the login-with-token one. But the iframe is only really displayed to the user once the event emmited by Rocket.Chat (check https://developer.rocket.chat/rocket.chat/iframe-integration/iframe-events) is captured, in particular the room-opened event. This allows as a demonstration to show that the loading page of Roclet.Chat does not need to be dispalyed and can be replaced by some other UI component representing loading that customer may prefer.
+
+Right now as soon as user clicks to another page as Home, the user would need to relogin simulating the logout mechanism.
+
+
+
