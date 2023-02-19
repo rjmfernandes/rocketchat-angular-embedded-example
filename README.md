@@ -58,5 +58,23 @@ First a list of channels (public) and groups (private) that he belongs (more exa
 
 Right now as soon as user clicks to another page as Home, the user would need to relogin simulating the logout mechanism.
 
+## How can you tune the example application
+
+The configurability of the application will be improved but in any case its already quite easy to change it for demonstration purposes.
+
+First the background image and logo image can be replaced under src/assets.
+
+The text (title and tagline) for the home page can be tweaked under src/app/home/home.component.ts
+
+The address test at the bottom can be tweaked at src/app/app.component.ts
+
+The labels for the buttons on top navigation could be changed at src/app/app.component.html
+
+Almost all the relevant stylesheet should be possible to tweak under src/styles.css
+
+The title of the application web page can be changed at src/index.html
+
+
+
 
 
