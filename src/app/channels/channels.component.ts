@@ -58,6 +58,7 @@ export class ChannelsComponent implements OnInit, AfterViewInit {
   onSelect(channel: Channel) {
     this.selectedChannel = channel;
     this.channelUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.rocketchatService.getChannelUrl(channel));
+    this.showIframe =false;
   }
 
   onIframeLoad() {
