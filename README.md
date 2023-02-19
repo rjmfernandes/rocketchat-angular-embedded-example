@@ -86,6 +86,12 @@ If you want to change the URL for your rocketchat of the default localhost:3000 
 
 (The fact there are two services currently with that information is really intentional to make it explicit that in fact the login on the application leveraging UserService is independent of Rocket.Chat.)
 
+## Understanding / Tunning Code
+
+If you are already familiar with Angular the code of this example project should be quite simple to understand and tune.
+
+If you are not familiar with Angular I would suggest first learning it a bit. The Tour of Heroes its a great tutorial: https://angular.io/tutorial/tour-of-heroes
+
 ## Next Steps
 
 - Make the application easier to configure by concentrating configurations (URLs, etc) on a json file.
