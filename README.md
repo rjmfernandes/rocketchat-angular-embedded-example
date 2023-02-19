@@ -86,3 +86,12 @@ If you want to change the URL for your rocketchat of the default localhost:3000 
 
 (The fact there are two services currently with that information is really intentional to make it explicit that in fact the login on the application leveraging UserService is independent of Rocket.Chat.)
 
+## Next Steps
+
+- Make the application easier to configure by concentrating configurations (URLs, etc) on a json file.
+- Localize the strings also to make it easier to tune the application to more specific demos.
+- Make the loading of iframe depending on events as a configurable option.
+- Review application to make it at least as an option to implement explicitly the login leveraging the create token mechanism in general used under such scenarios.
+- Review the channels list presentation to handle large channel names in a better looking way. (Currently I would advise to use short names fir the channels/rooms.)
+- Cleanup stylesheet. (Currently has too many not used styles.)
+
