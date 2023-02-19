@@ -92,6 +92,20 @@ If you are already familiar with Angular the code of this example project should
 
 If you are not familiar with Angular I would suggest first learning it a bit. The Tour of Heroes its a great tutorial: https://angular.io/tutorial/tour-of-heroes
 
+### Major Points to Pay Attention
+
+For the mechanism of embedding and calling Rocket.Chat REST API one needs the userId and authToken. There are mainly two ways of getting it:
+- Login https://developer.rocket.chat/reference/api/rest-api/endpoints/other-important-endpoints/authentication-endpoints/login
+- Create Token https://developer.rocket.chat/reference/api/rest-api/endpoints/core-endpoints/users-endpoints/create-users-token
+
+Currently the application leverages the first on UserService src/app/user.service.ts 
+
+This happens on LoginComponent src/app/login/login.component.ts. The LoginComponent src/app/login/login.component.html also displays once authenticated the ChannelsComponent src/app/channels/channels.component.ts (and passes the response of the login to it including userId and authToken).
+
+The ChannelsComponent when it initializes leverages the RocketchatService src/app/rocketchat.service.ts for fetching the subscrtiptions (channels/groups) of the user. It also fetches from the RocketchatService information about the Rocket.Chat host URL.
+
+The ChannelComponent src/app/channels/channels.component.html also includes an iframe that gets populated with the layout embedded URL of the selected channel/group. And when iframe is loaded the login-with-token event is sent. The Rocket.Chat room-opened event is also captured and used to trigger the display of the iframe containing the channel/room embedded Rocket.Chat component.
+
 ## Next Steps
 
 - Make the application easier to configure by concentrating configurations (URLs, etc) on a json file.
