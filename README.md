@@ -106,7 +106,7 @@ The ChannelsComponent when it initializes leverages the RocketchatService src/ap
 
 The ChannelComponent src/app/channels/channels.component.html also includes an iframe that gets populated with the layout embedded URL of the selected channel/group. And when iframe is loaded the login-with-token event is sent. The Rocket.Chat room-opened event is also captured and used to trigger the display of the iframe containing the channel/room embedded Rocket.Chat component.
 
-## Next Steps
+## Possible Next Steps
 
 - Make the application easier to configure by concentrating configurations (URLs, etc) on a json file.
 - Localize the strings also to make it easier to tune the application to more specific demos.
