@@ -2,26 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
 
-## Development server
+## Rocket.Chat Setup
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Rocket.Chat requires some configuration to prepare it for other applications to embed in an iframe. In particular the channel/group chat page component in embedded layout mode.
 
-## Code scaffolding
+- First step is to disable the "Restrict access inside any Iframe" under the General settings.
+- Also in General settings, under REST API section, you should enable "Enable CORS". You can set "CORS Origin" also to *
+- Still at General setting, but now under Iframe Integration, for this application example that listen and send events to Rocket.Chat, you should enable both "Enable Send" and "Enable Receive", and set for both "Send Target Origin" and "Receive Origins" to http://localhost:4200
+- As an important note for this application you won't need to change anything under Accounts settings and can keep "Enabled" in fact disabled under the Iframe section.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
