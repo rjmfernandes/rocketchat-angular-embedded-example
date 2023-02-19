@@ -82,5 +82,5 @@ The two main services communicating with Rocket.Chat REST API currently are:
 
 If you want to change the URL for your rocketchat of the default localhost:3000 to another one you would need to change those two services.
 
-(The fact there are two services currently with that information is in part intentional to make it explicit that in fact the login on the application leveraging UserService is independent of Rocket.Chat.)
+(The fact there are two services currently with that information is really intentional to make it explicit that in fact the login on the application leveraging UserService is independent of Rocket.Chat.)
 
