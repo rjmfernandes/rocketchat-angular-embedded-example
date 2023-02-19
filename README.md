@@ -1,3 +1,14 @@
+- [RocketchatAngularEmbeddedExample](#rocketchatangularembeddedexample)
+  * [Rocket.Chat Setup](#rocketchat-setup)
+  * [Running Angular App](#running-angular-app)
+    + [Requirements](#requirements)
+    + [Troubleshooting](#troubleshooting)
+  * [How the application works](#how-the-application-works)
+  * [How can you tune the example application](#how-can-you-tune-the-example-application)
+  * [Understanding or Tunning Code](#understanding-or-tunning-code)
+    + [Major Points to Pay Attention](#major-points-to-pay-attention)
+  * [Possible Next Steps](#possible-next-steps)
+
 # RocketchatAngularEmbeddedExample
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
@@ -86,7 +97,7 @@ If you want to change the URL for your rocketchat of the default localhost:3000 
 
 (The fact there are two services currently with that information is really intentional to make it explicit that in fact the login on the application leveraging UserService is independent of Rocket.Chat.)
 
-## Understanding / Tunning Code
+## Understanding or Tunning Code
 
 If you are already familiar with Angular the code of this example project should be quite simple to understand and tune.
 
