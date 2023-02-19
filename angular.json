@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rocketchat-angular-embedded-example",
+            "outputPath": "dist/rocketchat-angular-embedded-example/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -91,6 +91,59 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/rocketchat-angular-embedded-example/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "rocketchat-angular-embedded-example:build:development",
+              "serverTarget": "rocketchat-angular-embedded-example:server:development"
+            },
+            "production": {
+              "browserTarget": "rocketchat-angular-embedded-example:build:production",
+              "serverTarget": "rocketchat-angular-embedded-example:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "rocketchat-angular-embedded-example:build:production",
+              "serverTarget": "rocketchat-angular-embedded-example:server:production"
+            },
+            "development": {
+              "browserTarget": "rocketchat-angular-embedded-example:build:development",
+              "serverTarget": "rocketchat-angular-embedded-example:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

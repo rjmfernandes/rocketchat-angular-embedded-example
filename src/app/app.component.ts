@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'rocketchat-angular-embedded-example';
+  address = '12345 Great Street Suite 100-300, New York, USA';
 }

@@ -1,0 +1,15 @@
+<div *ngIf="!loginResponse">
+<h2>Login</h2>
+  <div>
+    <label for="user-name">Username: </label>
+    <input id="user-name" [(ngModel)]="user.user" placeholder="username">
+  </div>
+  <div>
+    <label for="password">Password: </label>
+    <input id="password" [(ngModel)]="user.password" placeholder="password">
+  </div>
+  <button type="button" class="login-button" (click)="login()">
+    Login
+  </button>
+</div>
+<app-channels *ngIf="loginResponse" [loginResponse]="loginResponse"></app-channels>
