@@ -8,5 +8,5 @@
 </nav>
 
 <iframe #rcChannel [hidden]="!showIframe" id="rcChannel" name="rcChannel" [src]="channelUrl" width="100%" height="500" frameborder="0" webkitallowfullscreen mozallowfullscreen
-allowfullscreen (load)="onIframeLoad()"></iframe>
+allowfullscreen (load)="onIframeLoad()" allow="clipboard-read; clipboard-write"></iframe>
 </div>

@@ -68,7 +68,7 @@ export class ChannelsComponent implements OnInit, AfterViewInit {
           externalCommand: 'login-with-token',
           token: this.loginResponse.authToken
         }, '*');
-      }, 5);
+      }, 0);
     }
   }
 
